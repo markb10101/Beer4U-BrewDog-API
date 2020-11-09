@@ -1,0 +1,44 @@
+
+h2 {
+    padding: 0 1rem 0 90px;
+}
+
+.firstBrewed {
+    padding-left: 90px;
+
+}
+
+.cardContainer {
+
+    width: 400px;
+    display: flex;
+
+    .picture {
+        padding: 20px;
+
+        img {
+            width: 50px;
+        }
+
+        .data{
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+    }
+
+    
+    .info {
+        padding-top: 1rem;
+
+        h3 {
+            font-style: italic;
+        }
+        .description {
+            width: 400px;
+             height: 200px;
+             overflow: auto;
+         }
+    }
+    
+    
+}

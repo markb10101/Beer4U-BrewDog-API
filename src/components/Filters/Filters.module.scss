@@ -1,0 +1,25 @@
+.sidePanel {
+
+    padding-top: 10px;
+
+    p {
+        padding-left: 10px;
+        font-weight: bold;
+    }
+      
+    .listContainer {
+        
+        padding-left: 10px;
+        width: 172px;
+    
+        ul {
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                list-style-type: none;
+            }
+        }     
+    }
+}
+
