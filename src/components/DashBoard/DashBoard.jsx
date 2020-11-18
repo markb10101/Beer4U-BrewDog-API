@@ -7,9 +7,9 @@ const DashBoard = (props) => {
   const { beers } = props;
 
   const getBeerJsx = (beer) => (
-    <div className={styles.beerCard}>
+    
       <BeerCard beer={beer} />
-    </div>
+
   )
 
   return (

@@ -1,44 +1,54 @@
+$light-card: #ffc;
+$mid-card: #eeb;
 
-h2 {
-    padding: 0 1rem 0 90px;
-}
-
-.firstBrewed {
-    padding-left: 90px;
-
-}
 
 .cardContainer {
 
-    width: 400px;
-    display: flex;
+    //border-left: 4px dotted $mid-card;
+    border-bottom: 4px dotted $mid-card;
 
-    .picture {
-        padding: 20px;
-
-        img {
-            width: 50px;
-        }
-
-        .data{
-            font-size: 0.8rem;
-            font-style: italic;
-        }
+    h2 {
+        padding: 1rem 1rem 0 90px;
     }
 
-    
-    .info {
-        padding-top: 1rem;
+    .firstBrewed {
+        padding-left: 90px;
 
-        h3 {
-            font-style: italic;
-        }
-        .description {
-            width: 400px;
-             height: 200px;
-             overflow: auto;
-         }
     }
-    
-    
+
+    .beerCard {
+
+        width: 400px;
+        display: flex;
+        padding-bottom: 1rem;
+
+        .picture {
+            padding: 0 20px;
+
+            img {
+                width: 50px;
+            }
+
+            .data {
+                font-size: 0.8rem;
+                font-style: italic;
+            }
+        }
+
+        .info {
+            padding-top: 1rem;
+
+            h3 {
+                font-style: italic;
+            }
+
+            .description {
+                width: 32rem;
+               // height: 300px;
+                overflow: auto;
+                line-height: 1.5rem;
+            }
+        }
+
+    }
 }

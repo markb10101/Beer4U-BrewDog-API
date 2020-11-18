@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react';
 import styles from "./SpecialDeals.module.scss";
-//import firebase from '../../firebase';
-//import { navigate } from "@reach/router";
-
 
 const SpecialDeals = (props) => {
   
@@ -10,14 +7,15 @@ const { user } = props;
 
 let displayName = "";
 let displayEmail = "";
-let displayImageSrc = "https://via.placeholder.com/150";
+
 
 if(user){
     console.log(user);
     displayName = user.displayName;
     displayEmail = user.email;
-    displayImageSrc = user.photoURL;
 }
+
+const specialDealSectionJSX = () => <a href="/">HIDE SPECIAL DEALS</a>
 
 
   return (

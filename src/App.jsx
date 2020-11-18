@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 import SideBar from './components/SideBar';
 import DashBoard from './components/DashBoard';
 import Routes from "./components/Routes";
+
 import firebase, { provider } from "./firebase";
 
 const App = () => {
@@ -14,6 +15,9 @@ const App = () => {
   const [abvFilter, setAbvFilter] = useState(false);
   const [classicFilter, setClassicFilter] = useState(false);
   const [acidFilter, setAcidFilter] = useState(false);
+
+  const currentLocation = window.location.pathname;
+
 
   const signInOut = () => {
     if (!user) {
@@ -45,19 +49,11 @@ const App = () => {
 
   const getApiData = (searchTerm) => {
 
-    let urlString = 'https://api.punkapi.com/v2/beers?&per_page=80';
+    let urlString = 'https://api.punkapi.com/v2/beers?&per_page=50';
 
-    if (abvFilter) {
-      urlString += '&abv_gt=6.0';
-    }
-    if (classicFilter) {
-      urlString += '&brewed_before=01-2010';
-    }
-    if (searchTerm !== "") {
-      urlString += '&beer_name=' + searchTerm;
-    }
-
-    console.log(urlString);
+    if (abvFilter) urlString += '&abv_gt=6.0';
+    if (classicFilter) urlString += '&brewed_before=01-2010';
+    if (searchTerm !== "") urlString += '&beer_name=' + searchTerm;
 
     fetch(urlString)
       .then(response => response.json())
@@ -72,21 +68,20 @@ const App = () => {
           response;
 
         setBeers(filteredBeers);
-
       })
 
       .catch((err) => {
         console.log(err);
       });
-
   }
+
+  useEffect(() => getUser())
 
   useEffect(() => {
     getApiData(searchText);
-    getUser();
   }, [abvFilter, classicFilter, acidFilter, searchText])
 
-  const userName = () => {
+  const greetUserJSX = () => {
     return user ? (
       <span>Hello {user.displayName}</span>
     ) : (
@@ -94,22 +89,20 @@ const App = () => {
       )
   }
 
-  const logInOutButtonText = () => {
-    return user ? "Log Out" : "Log In"
-  }
+  const logInOutButtonText = () => user ? "Log Out" : "Log In"
 
-
+  const specialDealSectionJSX = () => currentLocation === "/specialdeals" && user ?
+    <a href="/">HIDE SPECIAL DEALS</a> : <a href="/specialdeals">VIEW SPECIAL DEALS</a>
 
 
   return (
-
     <div className={styles.pageContainer}>
       <header>
         <h1>Beer4U - BrewDog Beer Selector</h1>
-        
+
       </header>
-      <div>{userName()}<span className={styles.logInButton}><button onClick={signInOut}>{logInOutButtonText()}</button></span>
-      <section><a href="/specialdeals">SPECIAL DEALS THIS WAY</a></section></div>
+      <div className={styles.greeting}>{greetUserJSX()}<span className={styles.logInButton}><button onClick={signInOut}>{logInOutButtonText()}</button></span>
+        <div>{specialDealSectionJSX()}</div></div>
       <div className={styles.mainContainer}>
         <div className={styles.sideBar}>
           <SideBar
@@ -122,7 +115,7 @@ const App = () => {
             setAcidFilter={setAcidFilter} />
         </div>
         <div className={styles.dashBoard}>
-          
+
           <section>
             <Routes user={user} />
           </section>
