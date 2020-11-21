@@ -12,7 +12,7 @@ const BeerCard = (props) => {
       <div className={styles.beerCard}>
 
         <div className={styles.picture}>
-          <img src={image_url} />
+          <img src={image_url} alt={name} />
           <span className={styles.data}>ABV:{abv} Ph:{ph}</span>
         </div>
 

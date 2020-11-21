@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,400;1,900&display=swap');
 
+
+$breakpointMobile: 720px;
+
 $font-header: 'Lobster',cursive;
 $font-main: 'Roboto',sans-serif;
 
 $light-background: #ff7;
 $mid-background: #cc4;
-
 
 * {
     padding: 0;
@@ -14,25 +16,31 @@ $mid-background: #cc4;
     box-sizing: border-box;
     font-family: $font-main;
     font-weight: 400;
+
     ::selection {
         background-color: $mid-background;
     }
 }
 
+/////////////////////////////////////////////////
+// mobile rules
+/////////////////////////////////////////////////
+
 .pageContainer {
-    background-image: linear-gradient(#ffc,#ffd,#fff);
+    background-image: linear-gradient(#ffc, #ffd, #fff);
+    display: flex;
+    flex-direction: column;
 
     header {
 
         background-color: $light-background;
         border-bottom: 4px solid $mid-background;
-        height: 80px;
-        white-space: nowrap;
+
 
         h1 {
-
-            padding: 0.5rem 0 0 14rem;
-            
+            padding-left: 1vw;
+            width: 80%;
+            text-align: center;
             color: #black;
             text-shadow: 2px 4px 4px $mid-background;
             font-family: $font-header;
@@ -44,8 +52,9 @@ $mid-background: #cc4;
     }
 
     .greeting {
+        font-size: 0.75rem;
         background-color: $mid-background;
-        padding: 0.75rem;
+        padding: 0.25rem;
 
         .logInButton {
             padding: 8px;
@@ -53,6 +62,7 @@ $mid-background: #cc4;
 
         a {
             color: black;
+
             &:hover {
                 color: white;
             }
@@ -61,23 +71,82 @@ $mid-background: #cc4;
     }
 
     .mainContainer {
-        display: flex;
-
-        .sideBar {
-            height: 100vh;
-            width: 200px;
-
-        }
-
         .dashBoard {
             height: 100vh;
-           
-            a {
-                font-size: 2rem;
+        }
+    }
+
+}
+
+
+/////////////////////////////////////////////////
+// desktop rules
+/////////////////////////////////////////////////
+@media (min-width: $breakpointMobile) {
+
+    .pageContainer {
+        background-image: linear-gradient(#ffc, #ffd, #fff);
+        width: 100%;
+
+        header {
+
+            background-color: $light-background;
+            border-bottom: 4px solid $mid-background;
+            height: 80px;
+            white-space: nowrap;
+
+            h1 {
+
+                padding: 0.5rem 0 0 14rem;
+
+                color: #black;
+                text-shadow: 2px 4px 4px $mid-background;
+                font-family: $font-header;
+                font-size: 2.5rem;
+
+
             }
 
+        }
+
+        .greeting {
+            background-color: $mid-background;
+            padding: 0.75rem;
+
+            .logInButton {
+                padding: 8px;
+            }
+
+            a {
+                color: black;
+
+                &:hover {
+                    color: white;
+                }
+            }
 
         }
+
+        .mainContainer {
+            display: flex;
+
+            .sideBar {
+                height: 100vh;
+                width: 200px;
+
+            }
+
+            .dashBoard {
+                height: 100vh;
+
+                a {
+                    font-size: 2rem;
+                }
+
+
+            }
+        }
+
     }
 
 }

@@ -1,24 +1,22 @@
 $light-card: #ffc;
 $mid-card: #eeb;
-
+$breakpointMobile: 720px;
 
 .cardContainer {
 
-    //border-left: 4px dotted $mid-card;
     border-bottom: 4px dotted $mid-card;
 
     h2 {
-        padding: 1rem 1rem 0 90px;
+        padding: 1rem 1rem 0 102px;
     }
 
     .firstBrewed {
-        padding-left: 90px;
+        padding-left: 103px;
 
     }
 
     .beerCard {
 
-        width: 400px;
         display: flex;
         padding-bottom: 1rem;
 
@@ -43,12 +41,68 @@ $mid-card: #eeb;
             }
 
             .description {
-                width: 32rem;
-               // height: 300px;
+                width: 17rem;
                 overflow: auto;
                 line-height: 1.5rem;
             }
         }
 
+    }
+}
+
+/////////////////////////////////////////////////
+// desktop rules
+/////////////////////////////////////////////////
+@media (min-width: $breakpointMobile) {
+
+    .cardContainer {
+
+        border-bottom: 4px dotted $mid-card;
+
+        h2 {
+            padding: 1rem 1rem 0 126px;
+        }
+
+        .firstBrewed {
+            padding-left: 127px;
+
+        }
+
+        .beerCard {
+
+            display: flex;
+            padding-bottom: 1rem;
+
+            .picture {
+                padding: 0 20px;
+                display: flex;
+                flex-direction: column;
+                img {
+                    width: 50px;
+                }
+
+                .data {
+                    width: 4rem;
+                    font-size: 0.8rem;
+                    font-style: italic;
+                }
+            }
+
+            .info {
+                padding-top: 1rem;
+                padding-left: 1.4rem;
+
+                h3 {
+                    font-style: italic;
+                }
+
+                .description {
+                    width: 27rem;
+                    overflow: auto;
+                    line-height: 1.5rem;
+                }
+            }
+
+        }
     }
 }

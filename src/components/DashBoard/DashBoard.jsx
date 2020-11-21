@@ -6,15 +6,11 @@ const DashBoard = (props) => {
 
   const { beers } = props;
 
-  const getBeerJsx = (beer) => (
-    
-      <BeerCard beer={beer} />
-
-  )
+  const getBeerJsx = (beer) => <BeerCard beer={beer} />
 
   return (
     <>
-      <section>{beers.map(getBeerJsx)}</section>
+      <div>{beers.map(getBeerJsx)}</div>
     </>
   );
 };

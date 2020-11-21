@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from "./SpecialDeals.module.scss";
 
 const SpecialDeals = (props) => {
@@ -10,13 +10,9 @@ let displayEmail = "";
 
 
 if(user){
-    console.log(user);
     displayName = user.displayName;
     displayEmail = user.email;
 }
-
-const specialDealSectionJSX = () => <a href="/">HIDE SPECIAL DEALS</a>
-
 
   return (
     <div className={styles.specialDeals}>
@@ -26,9 +22,7 @@ const specialDealSectionJSX = () => <a href="/">HIDE SPECIAL DEALS</a>
       <p>2: Inexpensive Pork Scratchings!</p>
       <p>3: Reduced Yeast!</p>
       <p>4: OFFER: Demijohns @ £1!</p>
-      <p>We have emailed a magic beer voucher to: {displayEmail}</p>
-      
-      
+      <p>We have emailed a magic beer voucher to: {displayEmail}</p>      
     </div>
   )
 }

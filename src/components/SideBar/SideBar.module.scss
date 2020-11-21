@@ -1,11 +1,24 @@
-*{
-    padding:0;
-    margin: 0;
-    margin: 0;
+$breakpointMobile: 720px;
 
-}
+
 .sideBar {
-    background-image: linear-gradient(#ffc,#fff);
-    padding: 2rem 0 2rem 0;
+    display: flex;
+    background-image: linear-gradient(#ffc, #fff);
+    padding: 0.5rem 0;
     height: 100%
+}
+
+/////////////////////////////////////////////////
+// desktop rules
+/////////////////////////////////////////////////
+@media (min-width: $breakpointMobile) {
+
+    .sideBar {
+        display: flex;
+        flex-direction: column;
+        background-image: linear-gradient(#ffc, #fff);
+        padding: 2rem 0 2rem 0;
+        height: 100%
+    }
+
 }

@@ -1,26 +1,62 @@
-.sidePanel {
+$breakpointMobile: 720px;
 
-    padding-top: 10px;
+.sidePanel {
 
     p {
         padding-left: 0.75rem;
         font-weight: bold;
     }
-      
+
     .listContainer {
-        
+
         padding: 0.75rem;
         width: 12rem;
-    
+
         ul {
             li {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 list-style-type: none;
-                line-height: 1.5rem;
+                font-size: 0.75rem;
+                line-height: 1rem;
             }
-        }     
+        }
     }
 }
 
+
+/////////////////////////////////////////////////
+// desktop rules
+/////////////////////////////////////////////////
+@media (min-width: $breakpointMobile) {
+
+
+    .sidePanel {
+
+        padding-top: 10px;
+
+        p {
+            padding-left: 0.75rem;
+            font-weight: bold;
+        }
+
+        .listContainer {
+
+            padding: 0.75rem;
+            width: 12rem;
+
+            ul {
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    list-style-type: none;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+    }
+
+}

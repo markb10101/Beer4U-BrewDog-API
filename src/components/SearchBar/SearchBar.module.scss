@@ -1,3 +1,24 @@
+$breakpointMobile: 720px;
+
+.searchContainer {
+    p{
+        
+        padding: 0 0 0.75rem 0.75rem;
+        font-weight: bold;
+    }
+    .searchBar {
+        padding-left: 0.75rem;
+
+    }
+}
+
+
+/////////////////////////////////////////////////
+// desktop rules
+/////////////////////////////////////////////////
+@media (min-width: $breakpointMobile) {
+
+
 .searchContainer {
 
     padding-bottom: 2rem;
@@ -7,7 +28,8 @@
         font-weight: bold;
     }
     .searchBar {
-        padding: 0 0 0 0.75rem;
+        padding-left: 0.75rem;
 
     }
+}
 }
